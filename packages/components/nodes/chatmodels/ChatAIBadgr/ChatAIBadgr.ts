@@ -138,10 +138,10 @@ class ChatAIBadgr_ChatModels implements INode {
         const obj: ChatOpenAIFields = {
             modelName,
             openAIApiKey: aiBadgrApiKey,
-            streaming: streaming ?? true
+            streaming: streaming ?? true,
+            temperature: temperature ? parseFloat(temperature) : undefined
         }
 
-        if (temperature) obj.temperature = parseFloat(temperature)
         if (maxTokens) obj.maxTokens = parseInt(maxTokens, 10)
         if (topP) obj.topP = parseFloat(topP)
         if (frequencyPenalty) obj.frequencyPenalty = parseFloat(frequencyPenalty)
