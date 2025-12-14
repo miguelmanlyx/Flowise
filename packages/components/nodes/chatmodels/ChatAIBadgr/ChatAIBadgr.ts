@@ -22,7 +22,7 @@ class ChatAIBadgr_ChatModels implements INode {
         this.type = 'ChatAIBadgr'
         this.icon = 'aibadgr.svg'
         this.category = 'Chat Models'
-        this.description = 'Wrapper around AI Badgr OpenAI-compatible Chat API'
+        this.description = 'OpenAI-compatible chat API with budget-friendly pricing'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.credential = {
             label: 'Connect Credential',
