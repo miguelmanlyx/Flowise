@@ -16,13 +16,13 @@ class ChatAIBadgr_ChatModels implements INode {
     inputs: INodeParams[]
 
     constructor() {
-        this.label = 'ChatAIBadgr'
+        this.label = 'AI Badgr Chat (OpenAI-compatible)'
         this.name = 'chatAIBadgr'
         this.version = 1.0
         this.type = 'ChatAIBadgr'
         this.icon = 'aibadgr.svg'
         this.category = 'Chat Models'
-        this.description = 'OpenAI-compatible chat API with budget-friendly pricing'
+        this.description = 'OpenAI-compatible chat provider for high-volume utility workloads'
         this.baseClasses = [this.type, ...getBaseClasses(ChatOpenAI)]
         this.credential = {
             label: 'Connect Credential',
@@ -42,8 +42,9 @@ class ChatAIBadgr_ChatModels implements INode {
                 label: 'Model Name',
                 name: 'modelName',
                 type: 'string',
-                placeholder: 'llama-3.1-8b',
-                description: 'Model name to use for chat completions'
+                placeholder: 'premium',
+                default: 'premium',
+                description: 'Use basic, normal, or premium (recommended). Advanced: phi-3-mini, mistral-7b, llama-3.1-8b'
             },
             {
                 label: 'Temperature',
