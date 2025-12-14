@@ -28,8 +28,7 @@ class ChatAIBadgr_ChatModels implements INode {
             label: 'Connect Credential',
             name: 'credential',
             type: 'credential',
-            credentialNames: ['aiBadgrApi'],
-            optional: true
+            credentialNames: ['aiBadgrApi']
         }
         this.inputs = [
             {
@@ -115,7 +114,8 @@ class ChatAIBadgr_ChatModels implements INode {
                 name: 'baseOptions',
                 type: 'json',
                 optional: true,
-                additionalParams: true
+                additionalParams: true,
+                description: 'Additional HTTP headers to send with requests (JSON object, e.g. {"X-Custom-Header": "value"})'
             }
         ]
     }
@@ -156,7 +156,7 @@ class ChatAIBadgr_ChatModels implements INode {
             try {
                 parsedBaseOptions = typeof baseOptions === 'object' ? baseOptions : JSON.parse(baseOptions)
             } catch (exception) {
-                throw new Error("Invalid JSON in the ChatAIBadgr's BaseOptions: " + exception)
+                throw new Error("Invalid JSON in BaseOptions (HTTP headers): " + exception)
             }
         }
 
